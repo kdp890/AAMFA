@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">df91a3c91b046110c3ae7596cc4bcb5b</sp_column>
+        <sp_widget display_value="MFA_Login">906a9f3a1b731110c3ae7596cc4bcb82</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-27 07:05:32</sys_created_on>
+        <sys_id>aab1ef891b046110c3ae7596cc4bcbcf</sys_id>
+        <sys_name/>
+        <sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7">002787761b331110c3ae7596cc4bcba7</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope>
+        <sys_update_name>sp_instance_aab1ef891b046110c3ae7596cc4bcbcf</sys_update_name>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=aab1ef891b046110c3ae7596cc4bcbcf"/>
+</record_update>

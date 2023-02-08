@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.qr_container{
+  min-width:350px;
+  overflow:hidden;
+  min-height:300px;
+  background-color:skyblue;
+  border: 5px solid black;
+  box-shadow: 0px 0px 50px currentcolor;
+}
+.qr_scanner{
+  min-width:300px;
+}
+.alert {
+  padding:10px;
+  background-color: #f44336;
+  color: white;
+  opacity:0.6;
+}
+.display{
+   display: none;
+}
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+
+  
+  </css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>aamfaqrw</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>AAMFA QR Widget</name>
+        <option_schema/>
+        <public>true</public>
+        <roles>public</roles>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-29 11:43:41</sys_created_on>
+        <sys_id>ab24fe391b0ce110c3ae7596cc4bcb53</sys_id>
+        <sys_name>AAMFA QR Widget</sys_name>
+        <sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7">002787761b331110c3ae7596cc4bcba7</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope>
+        <sys_update_name>sp_widget_ab24fe391b0ce110c3ae7596cc4bcb53</sys_update_name>
+        <template><![CDATA[<div>
+<!-- your widget template -->
+<script src="https://unpkg.com/html5-qrcode"></script>
+     <strong>You can scan only restaurant qr code! </strong>
+     <div class="qr_container">
+    <div id="qr-reader" class="qr_scanner"></div>
+     </div>
+    <div id="qr-reader-results"></div>
+  
+    <div id="error" class="display">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    <strong>Invalid input! </strong>Scan Valid Qr Code. 
+
+  </div>
+     <script>
+                var resultContainer = document.getElementById('qr-reader-results');
+                var lastResult, countResults = 0;
+    
+                function onScanSuccess(decodedText, decodedResult) {
+                    if (decodedText !== lastResult) {
+                        ++countResults;
+                        // Handle on success condition with the decoded message.
+                        console.log(`Scan result ${decodedText}`, decodedResult);
+                      if(decodedText=='https://www.servicenow.authentication_authorisation/qr/menu_page'){
+  
+                          document.location.href='https://dev90563.service-now.com/aamfa?id=aamfamp';
+                      }
+                      else{
+                      	var error = document.getElementById("error")
+                        error.classList.remove("display");
+                        error.classList.add("alert");
+                      }
+                        
+                    }
+                }
+    
+                var html5QrcodeScanner = new Html5QrcodeScanner("qr-reader", { fps: 10, qrbox: 250 });
+                html5QrcodeScanner.render(onScanSuccess);
+     </script>
+    </div>
+</div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

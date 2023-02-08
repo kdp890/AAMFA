@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="registration_form_field">
+    <registration_form_field action="INSERT_OR_UPDATE">
+        <column_label>City</column_label>
+        <column_name>city</column_name>
+        <custom_field>false</custom_field>
+        <display>false</display>
+        <mandatory>false</mandatory>
+        <order>10000</order>
+        <registration_configuration display_value="AAMAF user Registration">1d99a0171b375110c3ae7596cc4bcbbe</registration_configuration>
+        <sys_class_name>registration_form_field</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-21 07:14:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>a32a2c171b375110c3ae7596cc4bcb35</sys_id>
+        <sys_name>City</sys_name>
+        <sys_package display_value="External User Self-Registration" source="com.snc.external_user_self_registration">a776e09f1bf35110c3ae7596cc4bcbf5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope>
+        <sys_update_name>registration_form_field_a32a2c171b375110c3ae7596cc4bcb35</sys_update_name>
+        <type>6</type>
+        <validation_only>false</validation_only>
+    </registration_form_field>
+</record_update>

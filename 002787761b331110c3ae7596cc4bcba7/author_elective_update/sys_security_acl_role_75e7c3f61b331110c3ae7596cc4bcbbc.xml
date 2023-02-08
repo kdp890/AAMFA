@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-20 05:26:22</sys_created_on>
+        <sys_id>75e7c3f61b331110c3ae7596cc4bcbbc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>u_user_table.user</sys_name>
+        <sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7">002787761b331110c3ae7596cc4bcba7</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope>
+        <sys_security_acl display_value="u_user_table">f1e7c3f61b331110c3ae7596cc4bcbba</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_75e7c3f61b331110c3ae7596cc4bcbbc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-20 05:26:22</sys_updated_on>
+        <sys_user_role display_value="user" name="user">b05926fa0a0a0aa7000130023e0bde98</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</application>
+        <file_path/>
+        <instance_id>66176aa9db0ff7803050ac44d4961982</instance_id>
+        <instance_name>dev90563</instance_name>
+        <name>sys_security_acl_role_75e7c3f61b331110c3ae7596cc4bcbbc</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-12-20 05:26:22</sys_created_on><sys_id>75e7c3f61b331110c3ae7596cc4bcbbc</sys_id><sys_mod_count>0</sys_mod_count><sys_name>u_user_table.user</sys_name><sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7">002787761b331110c3ae7596cc4bcba7</sys_package><sys_policy/><sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope><sys_security_acl display_value="u_user_table">f1e7c3f61b331110c3ae7596cc4bcbba</sys_security_acl><sys_update_name>sys_security_acl_role_75e7c3f61b331110c3ae7596cc4bcbbc</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-12-20 05:26:22</sys_updated_on><sys_user_role display_value="user" name="user">b05926fa0a0a0aa7000130023e0bde98</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>-1299263051</payload_hash>
+        <record_name>u_user_table.user</record_name>
+        <reverted_from/>
+        <source>55449ee4f98211108c8bd16244dfe7ab</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-20 05:26:22</sys_created_on>
+        <sys_id>b5e7c3f61b331110c3ae7596cc4bcbbe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1852dff45e50000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-20 05:26:22</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>fde7c3f68e3311108553bb9d543a88bd</update_guid>
+        <update_guid_history>fde7c3f68e3311108553bb9d543a88bd:-1299263051</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="u_user_table.user">fc89cf3a1b331110c3ae7596cc4bcb87</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-20 05:33:23</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>23f5bbcb2424477485584995ac027d10</sys_id>
+        <sys_metadata>75e7c3f61b331110c3ae7596cc4bcbbc</sys_metadata>
+        <sys_name>u_user_table.user</sys_name>
+        <sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7">002787761b331110c3ae7596cc4bcba7</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope>
+        <sys_scope_delete display_value="">496b547d12ce4600962317fa6d52b491</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_75e7c3f61b331110c3ae7596cc4bcbbc</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_75e7c3f61b331110c3ae7596cc4bcbbc">b5e7c3f61b331110c3ae7596cc4bcbbe</sys_update_version>
+    </sys_metadata_delete>
+</record_update>

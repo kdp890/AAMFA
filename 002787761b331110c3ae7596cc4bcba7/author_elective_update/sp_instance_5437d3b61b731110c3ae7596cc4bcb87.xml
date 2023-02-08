@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">5437d3b61b731110c3ae7596cc4bcb85</sp_column>
+        <sp_widget/>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-20 06:33:10</sys_created_on>
+        <sys_id>5437d3b61b731110c3ae7596cc4bcb87</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7">002787761b331110c3ae7596cc4bcba7</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope>
+        <sys_update_name>sp_instance_5437d3b61b731110c3ae7596cc4bcb87</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-20 06:33:10</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=5437d3b61b731110c3ae7596cc4bcb87"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</application>
+        <file_path/>
+        <instance_id>66176aa9db0ff7803050ac44d4961982</instance_id>
+        <instance_name>dev90563</instance_name>
+        <name>sp_instance_5437d3b61b731110c3ae7596cc4bcb87</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="1">5437d3b61b731110c3ae7596cc4bcb85</sp_column><sp_widget/><sys_class_name>sp_instance</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-12-20 06:33:10</sys_created_on><sys_id>5437d3b61b731110c3ae7596cc4bcb87</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7">002787761b331110c3ae7596cc4bcba7</sys_package><sys_policy/><sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope><sys_update_name>sp_instance_5437d3b61b731110c3ae7596cc4bcb87</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-12-20 06:33:10</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=5437d3b61b731110c3ae7596cc4bcb87"/></record_update>]]></payload>
+        <payload_hash>1544343217</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>55449ee4f98211108c8bd16244dfe7ab</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-20 06:44:45</sys_created_on>
+        <sys_id>c2d91b3a1b731110c3ae7596cc4bcb37</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1852e4707fa0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-12-20 06:44:45</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>dc37d3b6cf731110159a30d8109c7f88</update_guid>
+        <update_guid_history>dc37d3b6cf731110159a30d8109c7f88:92971986,dc37d3b6cf731110159a30d8109c7f88:92971986</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">a7a065e71b779110c3ae7596cc4bcbdc</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-12-22 05:50:49</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>502c8ed15d784da8bea2dc076ec7d610</sys_id>
+        <sys_metadata>5437d3b61b731110c3ae7596cc4bcb87</sys_metadata>
+        <sys_name/>
+        <sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7">002787761b331110c3ae7596cc4bcba7</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope>
+        <sys_scope_delete display_value="">496b547d12ce4600962317fa6d52b491</sys_scope_delete>
+        <sys_update_name>sp_instance_5437d3b61b731110c3ae7596cc4bcb87</sys_update_name>
+        <sys_update_version display_value="sp_instance_5437d3b61b731110c3ae7596cc4bcb87">c2d91b3a1b731110c3ae7596cc4bcb37</sys_update_version>
+    </sys_metadata_delete>
+</record_update>
