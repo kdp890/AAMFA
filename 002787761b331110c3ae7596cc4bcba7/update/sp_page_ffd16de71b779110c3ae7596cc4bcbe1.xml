@@ -2,13 +2,28 @@
     <sp_page action="INSERT_OR_UPDATE">
         <category>custom</category>
         <css>.page{&#13;
-background-image:url("https://www.autonewspress.com/wp-content/uploads/2020/09/capgemini-logo.jpg");&#13;
   background-repeat:no-repeat;&#13;
-  background-size:auto;&#13;
+  background-size:cover;&#13;
   background:cover;&#13;
+  background-color:black;&#13;
   min-width:200px;&#13;
-  min-height:700px;&#13;
+  min-height:400px;&#13;
   max-width:auto;&#13;
+  padding:0px;&#13;
+  margin: 0px;&#13;
+}&#13;
+.column{&#13;
+	background-size:cover;&#13;
+  	padding:0px;&#13;
+}&#13;
+.row{&#13;
+	background-size:cover;&#13;
+  	padding:0px;&#13;
+}&#13;
+.container{&#13;
+  	background-size: contain,cover;&#13;
+  	padding:0px;&#13;
+  	&#13;
 }</css>
         <draft>false</draft>
         <dynamic_title_structure/>
@@ -23,11 +38,14 @@ background-image:url("https://www.autonewspress.com/wp-content/uploads/2020/09/c
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-12-22 05:56:28</sys_created_on>
         <sys_id>ffd16de71b779110c3ae7596cc4bcbe1</sys_id>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name>aamfap</sys_name>
         <sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7">002787761b331110c3ae7596cc4bcba7</sys_package>
         <sys_policy/>
         <sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope>
         <sys_update_name>sp_page_ffd16de71b779110c3ae7596cc4bcbe1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-10 08:44:38</sys_updated_on>
         <title>AAMFA page</title>
         <use_seo_script>false</use_seo_script>
     </sp_page>
