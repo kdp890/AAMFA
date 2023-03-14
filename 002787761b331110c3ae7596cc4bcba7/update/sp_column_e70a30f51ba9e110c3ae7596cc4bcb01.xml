@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column">
     <sp_column action="INSERT_OR_UPDATE">
-        <class_name>login</class_name>
+        <class_name/>
         <order>2</order>
-        <size>5</size>
-        <size_lg>4</size_lg>
-        <size_sm>6</size_sm>
+        <size>6</size>
+        <size_lg/>
+        <size_sm/>
         <size_xs/>
-        <sp_row display_value="1">5391a3c91b046110c3ae7596cc4bcb58</sp_row>
+        <sp_row display_value="1">a70afcb51ba9e110c3ae7596cc4bcbfc</sp_row>
         <sys_class_name>sp_column</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2022-12-27 07:05:02</sys_created_on>
-        <sys_id>df91a3c91b046110c3ae7596cc4bcb5b</sys_id>
+        <sys_created_on>2023-03-13 16:22:34</sys_created_on>
+        <sys_id>e70a30f51ba9e110c3ae7596cc4bcb01</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name>2</sys_name>
         <sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7">002787761b331110c3ae7596cc4bcba7</sys_package>
         <sys_policy/>
         <sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope>
-        <sys_update_name>sp_column_df91a3c91b046110c3ae7596cc4bcb5b</sys_update_name>
+        <sys_update_name>sp_column_e70a30f51ba9e110c3ae7596cc4bcb01</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-13 16:22:34</sys_updated_on>
     </sp_column>
 </record_update>

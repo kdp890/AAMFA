@@ -4,8 +4,7 @@
         <css>.page{&#13;
   background-repeat:no-repeat;&#13;
   background-size:100% 100%;&#13;
-  background-color: #ff4d4d;&#13;
-  background-image:url("https://cdn.dribbble.com/users/4063043/screenshots/10076735/media/a8d25b3f72e5e194ac9d9a6b2cd96172.jpg?compress=1&amp;resize=400x300&amp;vertical=top");&#13;
+  background-color:#EDEADE;&#13;
   padding:0px;&#13;
   margin: 0px;&#13;
 }&#13;
@@ -34,14 +33,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-12-29 11:52:46</sys_created_on>
         <sys_id>02767af51b4ce110c3ae7596cc4bcbde</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_name>aamfamp</sys_name>
         <sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7">002787761b331110c3ae7596cc4bcba7</sys_package>
         <sys_policy/>
         <sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope>
         <sys_update_name>sp_page_02767af51b4ce110c3ae7596cc4bcbde</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-02-13 07:16:51</sys_updated_on>
+        <sys_updated_on>2023-03-13 17:17:13</sys_updated_on>
         <title>AAMFA_Menu_page</title>
         <use_seo_script>false</use_seo_script>
     </sp_page>

@@ -10,20 +10,23 @@
         <roles/>
         <short_description/>
         <size>md</size>
-        <sp_column display_value="2">df91a3c91b046110c3ae7596cc4bcb5b</sp_column>
-        <sp_widget display_value="MFA_Login">906a9f3a1b731110c3ae7596cc4bcb82</sp_widget>
+        <sp_column display_value="1">f6608d3d1ba9e110c3ae7596cc4bcbc5</sp_column>
+        <sp_widget display_value="AAMFA Menu Widget1">d4a6feaf1bf0e110c3ae7596cc4bcba9</sp_widget>
         <sys_class_name>sp_instance</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2022-12-27 07:05:32</sys_created_on>
-        <sys_id>aab1ef891b046110c3ae7596cc4bcbcf</sys_id>
+        <sys_created_on>2023-03-13 16:52:05</sys_created_on>
+        <sys_id>7fc0c17d1ba9e110c3ae7596cc4bcb4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7">002787761b331110c3ae7596cc4bcba7</sys_package>
         <sys_policy/>
         <sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope>
-        <sys_update_name>sp_instance_aab1ef891b046110c3ae7596cc4bcbcf</sys_update_name>
+        <sys_update_name>sp_instance_7fc0c17d1ba9e110c3ae7596cc4bcb4d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-13 16:52:05</sys_updated_on>
         <title/>
         <url/>
         <widget_parameters/>
     </sp_instance>
-    <sys_translated_text action="delete_multiple" query="documentkey=aab1ef891b046110c3ae7596cc4bcbcf"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=7fc0c17d1ba9e110c3ae7596cc4bcb4d"/>
 </record_update>
