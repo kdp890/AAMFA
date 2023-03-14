@@ -4,18 +4,21 @@
         <description>If true, portal css would be in rem units</description>
         <ignore_cache>true</ignore_cache>
         <is_private>false</is_private>
-        <name>glide.service_portal.resize_text.aamfa.enable_rem_conversion</name>
+        <name>glide.service_portal.resize_text.mfa_authentication.enable_rem_conversion</name>
         <read_roles/>
         <suffix/>
         <sys_class_name>sys_properties</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-12-20 06:21:43</sys_created_on>
         <sys_id>2894d3f21b731110c3ae7596cc4bcb92</sys_id>
-        <sys_name>glide.service_portal.resize_text.aamfa.enable_rem_conversion</sys_name>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>glide.service_portal.resize_text.mfa_authentication.enable_rem_conversion</sys_name>
         <sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7">002787761b331110c3ae7596cc4bcba7</sys_package>
         <sys_policy/>
         <sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope>
         <sys_update_name>sys_properties_2894d3f21b731110c3ae7596cc4bcb92</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-13 18:15:16</sys_updated_on>
         <type>boolean</type>
         <value>true</value>
         <write_roles/>

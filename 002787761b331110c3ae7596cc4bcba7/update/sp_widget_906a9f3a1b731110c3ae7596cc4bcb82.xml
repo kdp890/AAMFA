@@ -139,278 +139,281 @@
 	}
 }]]></client_script>
         <controller_as>c</controller_as>
-        <css>.sp-login-widget { &#13;
-  &#13;
-  &#13;
- &#13;
-    text-align: center;&#13;
-  &#13;
-  .panel-body {&#13;
-    padding: 50px 30px 30px;&#13;
-    background-color: rgba(117, 190, 218, 1.0);&#13;
-    background-image: url("https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1");&#13;
-  }&#13;
-  .panel-heading{&#13;
-    background-color:rgba(117, 190, 218, 1.0);&#13;
-    background-image: url("https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1");&#13;
-  	color:white;&#13;
-  }&#13;
-  .forgot-pwd-link{&#13;
-   color:white;&#13;
-  }&#13;
-  .sp-self-registration{&#13;
-  	background-color: hsl(89, 43%, 51%);;&#13;
-    padding-top:20px;&#13;
-  	padding-bottom:20px;&#13;
-    &#13;
-    &#13;
-  }&#13;
-  .form-control,&#13;
-  label[for="username"],&#13;
-  label[for="password"] {&#13;
-    color: black;&#13;
-    text-align:left;&#13;
-  }&#13;
-  &#13;
-  .btn {&#13;
-    font-weight: 600;&#13;
-    font-size: 2.0rem;&#13;
-    background-color: $login-btn-bg;&#13;
-    border-color: $login-btn-border;&#13;
-  }&#13;
-  &#13;
-  .list-group {&#13;
-    margin-bottom: 12px;&#13;
-  }&#13;
-  &#13;
-  .login-button-old {&#13;
-    margin-top: 7px;&#13;
-  }&#13;
-  &#13;
-  .login-alert {&#13;
-    margin-left: 0px;&#13;
-    margin-right: 0px;&#13;
-  }&#13;
-&#13;
-}&#13;
-//STRY50033370: Forgot Password link in the login widget&#13;
-//Start -- login widget advanced view&#13;
-.sp-login-widget.advanced {  &#13;
-  .panel-title {&#13;
-    font-size:25px;&#13;
-  }&#13;
-  &#13;
-  .panel-default &gt; .panel-heading {&#13;
-    background-color:$panel-bg ;&#13;
-    border: 0px;    &#13;
-  }&#13;
-  &#13;
-  .panel-body {&#13;
-    padding: 0px 0px 10px;&#13;
-  }&#13;
-&#13;
-  [placeholder]::-webkit-input-placeholder { &#13;
-    transition: opacity 0.01s 0.01s ease !important; &#13;
-    opacity: 0 !important; &#13;
-  }&#13;
-&#13;
-  .form-signin {&#13;
-    .list-group-item { &#13;
-      border: 0px;&#13;
-    }&#13;
-    &#13;
-    .login-alert {&#13;
-    margin-left: 15px;&#13;
-    margin-right: 15px;&#13;
-    }&#13;
-    &#13;
-    .btn {&#13;
-      font-weight: 400 !important;&#13;
-      border-color: $brand-primary;&#13;
-      background-color: $brand-primary;&#13;
-      border-radius: 2px;&#13;
-    }&#13;
-&#13;
-    .forgot-pwd-div {&#13;
-      padding-right: 15px;&#13;
-      padding-left: 15px;&#13;
-      .forgot-text {&#13;
-        font-size: 16px;	&#13;
-        line-height: 20px;&#13;
-        padding-top: 8px;&#13;
-        &#13;
-      }&#13;
-      &#13;
-      .btn {&#13;
-        line-height: 16px;&#13;
-        font-size: 14px;&#13;
-        margin-top: 0px;&#13;
-      }&#13;
-      &#13;
-    }&#13;
-    &#13;
-    .submit-btn {&#13;
-      padding-right: 15px;&#13;
-      padding-left: 15px;&#13;
-    }&#13;
-    &#13;
-    .input-group-advanced {&#13;
-      margin-top: 10px;&#13;
-    }&#13;
-&#13;
-    .input-advanced {&#13;
-      border: 1px solid $btn-default-border !important;&#13;
-      border-radius: 3px !important;&#13;
-      background-color: $panel-bg !important;&#13;
-    }&#13;
-    &#13;
-    .checkbox {&#13;
-      padding-left: 15px !important; &#13;
-    }&#13;
-   &#13;
-    .label-advanced {&#13;
-      position: relative;&#13;
-      width: 100%;&#13;
-      padding: 0;&#13;
-      overflow: visible;&#13;
-      border: 0;&#13;
-      height: 19px;&#13;
-      color: $text-color;&#13;
-      font-size: 16px;&#13;
-      line-height: 19px;&#13;
-    }&#13;
-    &#13;
-    .mask_btn {&#13;
-      background-color: #fcfcfc;&#13;
-      border-color: #939393;&#13;
-      border-left : 0px;&#13;
-      width:fit-content;&#13;
-      border-top-left-radius: 0px !important;&#13;
-      border-bottom-left-radius: 0px !important;&#13;
-      font-size: 1.4rem !important;&#13;
-      position: relative;&#13;
-&#13;
-	&amp;.active {&#13;
-		&amp;:after {&#13;
-          	background-color: #2e2e2e;&#13;
-			content: "";&#13;
-			height: 16px;&#13;
-			left: 50%;&#13;
-	    		margin-top: -8px;&#13;
-			margin-inline-start: -1px;&#13;
-			margin-block-start: -8px;&#13;
-			position: absolute;&#13;
-			top: 50%;&#13;
-			transform: rotate(45deg);&#13;
-			width: 1px;&#13;
-			}&#13;
-		}&#13;
-    }&#13;
-&#13;
-    &#13;
-    .loginWithBtn {&#13;
-      padding: 0 1.5rem;&#13;
-    }&#13;
-    &#13;
-  }&#13;
-&#13;
-}&#13;
-//End -- login widget advanced view&#13;
-.sp-self-registration {&#13;
-  text-align: center;&#13;
-}&#13;
-.sp-login-widget {&#13;
-  &#13;
-.bar {&#13;
-  margin: 12px 0;&#13;
-  span {&#13;
-    position: relative;&#13;
-    display: block;&#13;
-    text-align: center;&#13;
-&#13;
-    &amp;:before, &amp;:after {&#13;
-      content: '';&#13;
-      position: absolute;&#13;
-      width: calc(50% - 24px);&#13;
-      height: 1px;&#13;
-      background-color: #b3bac7;&#13;
-      top: 8px;&#13;
-    }&#13;
-    &amp;:before {&#13;
-      right: 0;&#13;
-    }&#13;
-    &amp;:after {&#13;
-      left: 0;&#13;
-    }&#13;
-  }&#13;
-}&#13;
-button.cert, a.idp {&#13;
-  background-color: #fff !important;&#13;
-  border-color: #ccc !important;&#13;
-  width: 100%;&#13;
-  margin-bottom: 10px;&#13;
-&#13;
-  &amp;:hover {&#13;
-    border-color: #adadad;&#13;
-    background-color: #e6e6e6;&#13;
-  }&#13;
-  img {&#13;
-    height: 20px;&#13;
-    width: 20px;&#13;
-    margin-bottom: 3px;&#13;
-    margin-right: 9px;&#13;
-  }&#13;
-}&#13;
-  img.eye-icon {&#13;
-    content:url("eye.svg");&#13;
-    cursor: pointer;&#13;
-    width:18px;&#13;
-    height:18px;&#13;
-    display: flex;&#13;
-    justify-content:center;&#13;
-    align-items:center;&#13;
-    float:left;&#13;
-  }&#13;
-  &#13;
-  img.eye-icon.slashed {&#13;
-    content:url("eye-slash.svg");&#13;
-  }&#13;
-  &#13;
-  .password-group {&#13;
-    display:flex;&#13;
-    flex-direction:row;&#13;
-  }&#13;
- &#13;
-  .mask_btn {&#13;
-      background-color: #fcfcfc;&#13;
-      border-color: #939393;&#13;
-      border-left : 0px;&#13;
-      width:fit-content;&#13;
-      border-top-left-radius: 0px !important;&#13;
-      border-bottom-left-radius: 0px !important;&#13;
-      font-size: 1.4rem !important;&#13;
-      position: relative;&#13;
-&#13;
-	&amp;.active {&#13;
-		&amp;:after {&#13;
-          	background-color: #2e2e2e;&#13;
-			content: "";&#13;
-			height: 16px;&#13;
-			left: 50%;&#13;
-	    		margin-top: -8px;&#13;
-			margin-inline-start: -1px;&#13;
-			margin-block-start: -8px;&#13;
-			position: absolute;&#13;
-			top: 50%;&#13;
-			transform: rotate(45deg);&#13;
-			width: 1px;&#13;
-			}&#13;
-		}&#13;
-    }&#13;
-  input::-ms-reveal,&#13;
-    input::-ms-clear {&#13;
-      display: none;&#13;
-  }&#13;
+        <css>.sp-login-widget { 
+  
+  
+		 text-align: center;
+   
+  		opacity:0.9;
+			background-color:#EDEADE;
+			padding:25px;
+			border-radius:15px 50px;
+			border: solid;
+			border-color:#000000;
+  
+  .panel-body {
+    padding: 50px 30px 30px;
+   
+  }
+  .panel-heading{
+  	color:white;
+  }
+  .forgot-pwd-link{
+   color:white;
+  }
+  .sp-self-registration{
+  	 padding-top:20px;
+  		padding-bottom:20px;
+    	color:black;
+    
+    
+  }
+  .form-control,
+  label[for="username"],
+  label[for="password"] {
+    color: black;
+    text-align:left;
+  }
+  
+  .btn {
+    font-weight: 600;
+    font-size: 2.0rem;
+    background-color: $login-btn-bg;
+    border-color: $login-btn-border;
+  }
+  
+  .list-group {
+    margin-bottom: 12px;
+  }
+  
+  .login-button-old {
+    margin-top: 7px;
+  }
+  
+  .login-alert {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+}
+//STRY50033370: Forgot Password link in the login widget
+//Start -- login widget advanced view
+.sp-login-widget.advanced {  
+  .panel-title {
+    font-size:25px;
+  }
+  
+  .panel-default &gt; .panel-heading {
+    background-color:$panel-bg ;
+    border: 0px;    
+  }
+  
+  .panel-body {
+    padding: 0px 0px 10px;
+  }
+
+  [placeholder]::-webkit-input-placeholder { 
+    transition: opacity 0.01s 0.01s ease !important; 
+    opacity: 0 !important; 
+  }
+
+  .form-signin {
+    .list-group-item { 
+      border: 0px;
+    }
+    
+    .login-alert {
+    margin-left: 15px;
+    margin-right: 15px;
+    }
+    
+    .btn {
+      font-weight: 400 !important;
+      border-color: $brand-primary;
+      background-color: $brand-primary;
+      border-radius: 2px;
+    }
+
+    .forgot-pwd-div {
+      padding-right: 15px;
+      padding-left: 15px;
+      .forgot-text {
+        font-size: 16px;	
+        line-height: 20px;
+        padding-top: 8px;
+        
+      }
+      
+      .btn {
+        line-height: 16px;
+        font-size: 14px;
+        margin-top: 0px;
+      }
+      
+    }
+    
+    .submit-btn {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+    
+    .input-group-advanced {
+      margin-top: 10px;
+    }
+
+    .input-advanced {
+      border: 1px solid $btn-default-border !important;
+      border-radius: 3px !important;
+      background-color: $panel-bg !important;
+    }
+    
+    .checkbox {
+      padding-left: 15px !important; 
+    }
+   
+    .label-advanced {
+      position: relative;
+      width: 100%;
+      padding: 0;
+      overflow: visible;
+      border: 0;
+      height: 19px;
+      color: $text-color;
+      font-size: 16px;
+      line-height: 19px;
+    }
+    
+    .mask_btn {
+      background-color: #fcfcfc;
+      border-color: #939393;
+      border-left : 0px;
+      width:fit-content;
+      border-top-left-radius: 0px !important;
+      border-bottom-left-radius: 0px !important;
+      font-size: 1.4rem !important;
+      position: relative;
+
+	&amp;.active {
+		&amp;:after {
+          	background-color: #2e2e2e;
+			content: "";
+			height: 16px;
+			left: 50%;
+	    		margin-top: -8px;
+			margin-inline-start: -1px;
+			margin-block-start: -8px;
+			position: absolute;
+			top: 50%;
+			transform: rotate(45deg);
+			width: 1px;
+			}
+		}
+    }
+
+    
+    .loginWithBtn {
+      padding: 0 1.5rem;
+    }
+    
+  }
+
+}
+//End -- login widget advanced view
+.sp-self-registration {
+  text-align: center;
+}
+.sp-login-widget {
+  
+.bar {
+  margin: 12px 0;
+  span {
+    position: relative;
+    display: block;
+    text-align: center;
+
+    &amp;:before, &amp;:after {
+      content: '';
+      position: absolute;
+      width: calc(50% - 24px);
+      height: 1px;
+      background-color: #b3bac7;
+      top: 8px;
+    }
+    &amp;:before {
+      right: 0;
+    }
+    &amp;:after {
+      left: 0;
+    }
+  }
+}
+button.cert, a.idp {
+  background-color: #fff !important;
+  border-color: #ccc !important;
+  width: 100%;
+  margin-bottom: 10px;
+
+  &amp;:hover {
+    border-color: #adadad;
+    background-color: #e6e6e6;
+  }
+  img {
+    height: 20px;
+    width: 20px;
+    margin-bottom: 3px;
+    margin-right: 9px;
+  }
+}
+  img.eye-icon {
+    content:url("eye.svg");
+    cursor: pointer;
+    width:18px;
+    height:18px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    float:left;
+  }
+  
+  img.eye-icon.slashed {
+    content:url("eye-slash.svg");
+  }
+  
+  .password-group {
+    display:flex;
+    flex-direction:row;
+  }
+ 
+  .mask_btn {
+      background-color: #fcfcfc;
+      border-color: #939393;
+      border-left : 0px;
+      width:fit-content;
+      border-top-left-radius: 0px !important;
+      border-bottom-left-radius: 0px !important;
+      font-size: 1.4rem !important;
+      position: relative;
+
+	&amp;.active {
+		&amp;:after {
+          	background-color: #2e2e2e;
+			content: "";
+			height: 16px;
+			left: 50%;
+	    		margin-top: -8px;
+			margin-inline-start: -1px;
+			margin-block-start: -8px;
+			position: absolute;
+			top: 50%;
+			transform: rotate(45deg);
+			width: 1px;
+			}
+		}
+    }
+  input::-ms-reveal,
+    input::-ms-clear {
+      display: none;
+  }
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -523,17 +526,19 @@ button.cert, a.idp {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-12-20 06:47:05</sys_created_on>
         <sys_id>906a9f3a1b731110c3ae7596cc4bcb82</sys_id>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>MFA_Login</sys_name>
         <sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7">002787761b331110c3ae7596cc4bcba7</sys_package>
         <sys_policy/>
         <sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope>
         <sys_update_name>sp_widget_906a9f3a1b731110c3ae7596cc4bcb82</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-13 16:15:30</sys_updated_on>
         <template><![CDATA[<div ng-if="!data.is_logged_in" class="sp-login-widget" ng-class="::(c.options.use_advanced == 'true' ? 'advanced' : '')">
   <form ng-if="!c.externalLoginMode" class="form-signin" ng-submit="c.login(c.username, c.password)" method="post">
 		<div ng-class="::{'panel panel-default': c.options.show_panel}">
 			<div ng-if="::c.options.show_panel" class="panel-heading padder-v">
-                <h2>Welcome to AAMFA</h2>
-				<h3 class="panel-title">${Login} </h3> 
+				<h3 class="panel-title">${} </h3> 
 			</div>
 			<div ng-class="::{'panel-body': c.options.show_panel}">
 				<div class="list-group list-group-sm">
@@ -632,7 +637,7 @@ button.cert, a.idp {&#13;
       </div>
 	</div>
 	</form>
-    <Button ng-click="c.showMenuPage()">Scan Qr for menu </Button>
+    <a ng-click="c.showMenuPage()">Scan Qr for menu </a>
    <div class="sp-self-registration forgot-pwd-link" ng-if="::c.data.self_registration_record_producer">${Don't have an account?}
     	<a ng-href="/{{::c.data.url_suffix}}?id=sn_user_registration&sys_id={{::c.data.self_registration_record_producer}}">{{::c.data.self_registration_label}}</a>
   	</div>

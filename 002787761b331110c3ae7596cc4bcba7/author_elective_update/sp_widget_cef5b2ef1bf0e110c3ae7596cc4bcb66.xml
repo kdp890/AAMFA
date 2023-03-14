@@ -1,0 +1,2033 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[let navbar = document.querySelector('.navbar')
+  document.querySelector('#menu-btn').onclick = () =>{
+    navbar.classList.toggle('active');
+    loginForm.classList.remove('active');
+    searchForm.classList.remove('active');
+}
+	let searchForm = document.querySelector('.search-form')
+   document.querySelector('#search-btn').onclick = () =>{
+    searchForm.classList.toggle('active');
+    navbar.classList.remove('active');
+    loginForm.classList.remove('active');
+} 
+	 window.onscroll = () =>{
+    navbar.classList.remove('active');
+    loginForm.classList.remove('active');
+    searchForm.classList.remove('active');
+}
+var swiper = new Swiper(".review-slider", {
+    loop:true,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+        delay: 5500,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+    },
+});]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&amp;display=swap');
+
+:root{
+    --orange:#F79F1F;
+    --text-color-1:#444;
+    --text-color-2:#666;
+    --bg-color-1:#fff;
+    --bg-color-2:#eee;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition:all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width:.8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background:var(--orange);
+    border-radius: 5rem;
+}
+
+body{
+    background:var(--bg-color-2);
+}
+
+body.active{
+    --text-color-1:#fff;
+    --text-color-2:#eee;
+    --bg-color-1:#333;
+    --bg-color-2:#222;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.4);
+}
+
+section{
+    padding:2rem 7%;
+}
+
+.heading{
+    text-align: center;
+    padding-bottom: 2rem;
+    color:var(--text-color-1);
+    font-size: 4rem;
+}
+
+.heading span{
+    position: relative;
+    z-index: 0;
+}
+
+.heading span::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    background: var(--orange);
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(0 90%, 100% 83%, 100% 100%, 0% 100%);
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.8rem 3rem;
+    font-size: 1.7rem;
+    color:#fff;
+    background:#ab6806;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.btn:hover{
+    letter-spacing: .2rem;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right:0;
+    background:var(--bg-color-1);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem 7%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo{
+    font-weight: bolder;
+    font-size: 2.5rem;
+    color:var(--text-color-1);
+}
+
+.header .logo i{
+    color:var(--orange);
+}
+
+.header .search-form{
+    background:var(--bg-color-2);
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    height: 4.5rem;
+    width:50rem;
+}
+
+.header .search-form input{
+    height:100%;
+    width:100%;
+    background:none;
+    text-transform: none;
+    font-size: 1.5rem;
+    color:var(--text-color-1);
+    padding:1rem;
+}
+
+.header .search-form label{
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    color:var(--text-color-1);
+    cursor: pointer;
+}
+
+.header .search-form label:hover{
+    color:var(--orange);
+}
+
+.header .icons div{
+    height:4.5rem;
+    width:4.5rem;
+    line-height:4.5rem;
+    font-size: 2rem;
+    border-radius: .5rem;
+    margin-left: .5rem;
+    background:var(--bg-color-2);
+    color:var(--text-color-1);
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    color:#fff;
+    background:var(--orange);
+}
+
+#search-btn{
+    display:none;
+}
+
+.header .navbar{
+    position:absolute;
+    top:115%; right:7%;
+    background:var(--bg-color-1);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width:25rem;
+    transform:scale(0);
+    transform-origin: top right;
+}
+
+.header .navbar.active{
+    transform:scale(1);
+}
+
+.header .navbar a{
+    display:block;
+    margin:1rem;
+    padding:1rem;
+    font-size: 1.5rem;
+    color:var(--text-color-1);
+    border-radius: .5rem;
+}
+
+.header .navbar a:hover{
+    color:var(--orange);
+    background:var(--bg-color-2);
+    padding-left: 2rem;
+}
+ 
+.home{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    padding-top: 7rem;
+    background: #fff;
+}
+
+.home .image{
+    flex:1 1 45rem;
+}
+
+.home .image img{
+    width: 100%;
+}
+
+.home .content{
+    flex:1 1 45rem;
+}
+
+.home .content h3{
+    color:var(--text-color-1);
+    font-size: 4rem;
+}
+
+.home .content p{
+    color:var(--text-color-2);
+    font-size: 1.7rem;
+    line-height: 1.7;
+    padding:1rem 0;
+}
+
+.form-container form{
+    background: var(--bg-color-1);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    padding:2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap:1rem;
+    align-items: center;
+}
+
+.form-container form .inputBox{
+    flex:1 1 23rem;
+}
+
+.form-container form .inputBox span{
+    font-size: 1.7rem;
+    color:var(--text-color-2);
+}
+
+.form-container form .inputBox input{
+    font-size: 1.5rem;
+    color:var(--text-color-1);
+    background:var(--bg-color-2);
+    border-radius: .5rem;
+    margin:.5rem 0;
+    text-transform: none;
+    width: 100%;
+    padding:1rem;
+}
+
+.form-container form .btn{
+    flex:1 1 23rem;
+}
+
+.packages .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.packages .box-container .box{
+    background:var(--bg-color-1);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.packages .box-container .box .image{
+    height:25rem;
+    width: 100%;
+    padding:1.5rem;
+    position: relative;
+}
+
+.packages .box-container .box .image img{
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+
+.packages .box-container .box .image h3{
+    position: absolute;
+    top:2.5rem; left:2.5rem;
+    font-size: 2rem;
+    color:#fff;
+    background: rgba(0,0,0,.5);
+    border-radius: .5rem;
+    font-weight: lighter;
+    padding:.5rem 1.5rem;
+}
+
+.packages .box-container .box .image h3 i{
+    color:var(--orange);
+}
+
+.packages .box-container .box .content{
+    padding:1.5rem;
+    padding-top: 0;
+}
+
+.packages .box-container .box .content .price{
+    font-weight: 600;
+    color:var(--text-color-1);
+    font-size: 2.5rem;
+}
+
+.packages .box-container .box .content .price span{
+    font-weight: lighter;
+    color:var(--text-color-2);
+    font-size: 1.5rem;
+    text-decoration: line-through;
+}
+
+.packages .box-container .box .content p{
+    font-size: 1.5rem;
+    padding:.5rem 0;
+    color:var(--text-color-2);
+    line-height: 1.7;
+}
+ 
+.pricing .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.pricing .box-container .box{
+    background:var(--bg-color-1);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    padding:2rem;
+    text-align: center;
+}
+
+.pricing .box-container .box h3{
+    padding:1rem;
+    background: var(--bg-color-2);
+    border-radius: .5rem;
+    font-size: 2rem;
+    color:var(--text-color-1);
+}
+
+.pricing .box-container .box .price{
+    padding-top: 2rem;
+}
+
+.pricing .box-container .box .price span{
+    font-size: 2rem;
+    color:var(--text-color-2);
+}
+
+.pricing .box-container .box .price .amount{
+    font-size: 5rem;
+    color:var(--text-color-1);
+    font-weight: bolder;
+}
+
+.pricing .box-container .box ul{
+    padding: .5rem 0;
+    list-style: none;
+}
+
+.pricing .box-container .box ul li{
+    padding: 1rem 0;
+    font-size: 1.7rem;
+    color:var(--text-color-2);
+}
+
+.review .review-slider{
+    box-shadow: var(--box-shadow);
+}
+
+.review .review-slider .slide{
+    background: var(--bg-color-1);
+    border-radius: .5rem;
+    text-align: center;
+    padding: 3rem;
+}
+
+.review .review-slider .slide img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: .5rem;
+}
+
+.review .review-slider .slide h3{
+    font-size: 2.5rem;
+    color:var(--text-color-1);
+}
+
+.review .review-slider .slide p{
+    font-size: 1.6rem;
+    color:var(--text-color-2);
+    line-height: 1.7;
+    padding: 1rem 0;
+}
+
+.review .review-slider .slide .stars{
+    padding: 1rem 0;
+    padding-bottom: 1.5rem;
+}
+
+.review .review-slider .slide .stars i{
+    font-size: 2rem;
+    color:var(--orange);
+}
+
+.swiper-pagination-bullet-active{
+    background: var(--orange);
+}
+
+.contact form{
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact form .inputBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact form textarea,
+.contact form .inputBox input{
+    width: 100%;
+    padding:1rem;
+    font-size: 1.6rem;
+    color:var(--text-color-1);
+    margin:.7rem 0;
+    background: var(--bg-color-1);
+    box-shadow: var(--box-shadow);
+    text-transform: none;
+    border-radius: .5rem;
+}
+
+.contact form textarea{
+    height: 20rem;
+    resize: none;
+}
+
+.contact form .inputBox input{
+    width: 49%;
+}
+
+.blogs .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.blogs .box-container .box{
+    background:var(--bg-color-1);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    padding:2rem;
+}
+
+.blogs .box-container .box .image{
+    height: 20rem;
+    width: 100%;
+    overflow:hidden;
+    border-radius: .5rem;
+    background: var(--bg-color-2);
+}
+
+.blogs .box-container .box .image img{
+    height: 100%;
+    width: 100%;
+}
+
+.blogs .box-container .box:hover .image img{
+    transform:scale(1.2);
+}
+
+.blogs .box-container .box .content{
+    padding-top: 1rem;
+}
+
+.blogs .box-container .box .content h3{
+   font-size: 2rem;
+   color:var(--text-color-1);
+   line-height: 1.5;
+}
+
+.blogs .box-container .box .content .icons{
+    display: flex;
+    justify-content: space-between;
+    border-top: .1rem solid var(--text-color-2);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+}
+
+.blogs .box-container .box .content .icons a{
+    font-size: 1.5rem;
+    color:var(--text-color-2);
+}
+
+.blogs .box-container .box .content .icons a:hover{
+    color:var(--orange);
+}
+
+.blogs .box-container .box .content .icons a i{
+    padding-right: .5rem;
+    color:var(--orange);
+}
+
+.footer{
+    background: var(--bg-color-1);
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap:1.5rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color:var(--text-color-1);
+    padding:1rem 0;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.5rem;
+    color:var(--text-color-2);
+    padding:1rem 0;
+}
+
+.footer .box-container .box a i{
+    padding-right: .5rem;
+    color:var(--orange);
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}
+
+.footer .credit{
+    font-size: 2rem;
+    text-align: center;
+    border-top: .1rem solid var(--text-color-2);
+    padding:1rem;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    color:var(--text-color-2);
+}
+
+.footer .credit span{
+    color:var(--orange);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries  */
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:1.5rem 2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .header .navbar{
+        right: 2rem;
+    }
+
+    .header .login-form{
+        right: 2rem;
+    }
+
+    #search-btn{
+        display:inline-block;
+    }
+
+    .header .search-form{
+        position: absolute;
+        top:115%; right: 2rem;
+        background:var(--bg-color-1);
+        border-radius: .5rem;
+        width: 90%;
+        box-shadow: var(--box-shadow);
+        transform:scale(0);
+        transform-origin: top right;
+    }
+
+    .header .search-form.active{
+        transform:scale(1);
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .contact form .inputBox input{
+        width: 100%;
+    }
+
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>aamfahw</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>AAMFA Home Widget</name>
+        <option_schema/>
+        <public>true</public>
+        <roles>new user,admin</roles>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-10 05:08:41</sys_created_on>
+        <sys_id>cef5b2ef1bf0e110c3ae7596cc4bcb66</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_name>AAMFA Home Widget</sys_name>
+        <sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7">002787761b331110c3ae7596cc4bcba7</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope>
+        <sys_update_name>sp_widget_cef5b2ef1bf0e110c3ae7596cc4bcb66</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-13 18:10:47</sys_updated_on>
+        <template><![CDATA[<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+ 
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- custom css file cdn link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="image" data-aos="fade-down">
+        <img src="https://st4.depositphotos.com/2714851/21414/i/600/depositphotos_214141628-stock-photo-plated-vegetarian-main-meal.jpg" alt="">
+    </div>
+
+    <div class="content" data-aos="fade-up">
+        <h3>Most Tasty Food For You</h3>
+        <p>Food Zone” restaurant Pinstripes presents itself as a brand that cares about its food and promises a fun, elevated experience. It focuses on the restaurant serving as a venue for great times with friends.!</p>
+        <a href="#" class="btn">explore now</a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- filter form section starts  -->
+
+<section class="form-container" data-aos="zoom-in">
+
+    <form action="">
+
+        <div class="inputBox">
+            <span>where</span>
+            <input type="text" placeholder="search places">
+        </div>
+
+        <div class="inputBox">
+            <span>When</span>
+            <input type="date">
+        </div>
+
+        <div class="inputBox">
+            <span>Time</span>
+            <input type="time">
+        </div>
+
+        <input type="submit" value="book now" class="btn">
+
+    </form>
+
+</section>
+
+<!-- filter form section ends -->
+
+<!-- packages section starts  -->
+
+<section class="packages" id="packages">
+
+    <h1 class="heading"> our <span>Foods</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="https://www.oetker.in/Recipe/Recipes/oetker.in/in-en/burgers/image-thumb__131674__RecipeDetailsLightBox/maharaja-burger.jpg" alt="">
+                <h3> <i class="fas fa-utensils"></i> Burger </h3>
+            </div>
+            <div class="content">
+                <div class="price"> 290.99 <span>350.99</span> </div>
+                <p>Juicy, big, loaded with toppings of your choice..</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="https://www.spar.co.uk/media/zrkfgcyg/shutterstock_168331826.jpg?anchor=center&mode=crop&heightratio=0.625&width=1920&rnd=133039182938670000" alt="">
+                <h3> <i class="fas fa-utensils"></i> Pasta </h3>
+            </div>
+            <div class="content">
+                <div class="price"> 350.99 <span>499.99</span> </div>
+                <p>Penne with a traditional tomato based sauce,finished off spices.</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="https://realfood.tesco.com/media/images/1400x919-MargaritaPizza-555a4065-2573-4b41-bcf3-7193cd095d8f-0-1400x919.jpg" alt="">
+                <h3> <i class="fas fa-utensils"></i> Pizza </h3>
+            </div>
+            <div class="content">
+                <div class="price"> 199.99 <span>249.99</span> </div>
+                <p> An intensely cheesy flavor. The combination tomato sauce cheese.</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="https://media.istockphoto.com/id/488481490/photo/fish-biryani-with-basmati-rice-indian-food.jpg?s=612x612&w=0&k=20&c=9xEw3VOQSz9TP8yQr60L47uExyKF9kogRhQdlghlC00=" alt="">
+                <h3> <i class="fas fa-utensils"></i> Biryani </h3>
+            </div>
+            <div class="content">
+                <div class="price"> 290.99 <span>350.99</span> </div>
+                <p> traditionally cooked over an open fire in a leather pot.</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="https://restaurantclicks.com/wp-content/uploads/2022/05/Most-Popular-Ice-Cream.jpg" alt="">
+                <h3> <i class="fas fa-utensils"></i> Ice-Cream </h3>
+            </div>
+            <div class="content">
+                <div class="price"> 100.99 <span>149.99</span> </div>
+                <p> made from dairy products such as milk and cream using fruits.</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="https://www.theseasonedmom.com/wp-content/uploads/2018/04/Easiest-Burrito-Recipe-Square-500x375.jpg" alt="">
+                <h3> <i class="fas fa-utensils"></i> burrito </h3>
+            </div>
+            <div class="content">
+                <div class="price"> 139.99 <span>299.99</span> </div>
+                <p>wrapped around a mixed filling of such ingredients as meat, cheese, beans.</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- packages section ends -->
+ 
+
+<!-- pricing section starts  -->
+
+<section class="pricing" id="pricing">
+
+    <h1 class="heading"> our <span>pricing</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box" data-aos="zoom-in-up">
+            <h3> basic plan </h3>
+            <div class="price">
+                <span>$</span>
+                <span class="amount">30</span>
+                <span>/mo</span>
+            </div>
+            <ul>
+                <li>10 days</li>
+                <li>food and drinks</li>
+                <li>safty guide</li>
+                <li>insurance</li>
+                <li>luxury hotel</li>
+            </ul>
+            <a href="#" class="btn">choose plan</a>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up">
+            <h3> standard plan </h3>
+            <div class="price">
+                <span>$</span>
+                <span class="amount">50</span>
+                <span>/mo</span>
+            </div>
+            <ul>
+                <li>20 days</li>
+                <li>food and drinks</li>
+                <li>safty guide</li>
+                <li>insurance</li>
+                <li>luxury hotel</li>
+            </ul>
+            <a href="#" class="btn">choose plan</a>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up">
+            <h3> premium plan </h3>
+            <div class="price">
+                <span>$</span>
+                <span class="amount">90</span>
+                <span>/mo</span>
+            </div>
+            <ul>
+                <li>30 days</li>
+                <li>food and drinks</li>
+                <li>safty guide</li>
+                <li>insurance</li>
+                <li>luxury hotel</li>
+            </ul>
+            <a href="#" class="btn">choose plan</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- pricing section ends -->
+
+<!-- review section starts  -->
+
+<section class="review" id="review">
+
+    <h1 class="heading"> client's <span>review</span> </h1>
+
+    <div class="swiper-container review-slider" data-aos="zoom-in">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide">
+                <img src="images/pic-1.png" alt="">
+                <h3>john deo</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur sunt eligendi est, dicta maiores amet nihil perferendis, incidunt maxime aspernatur exercitationem laboriosam odio dolores magnam ratione atque, quasi odit. Hic!</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img src="images/pic-2.png" alt="">
+                <h3>john deo</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur sunt eligendi est, dicta maiores amet nihil perferendis, incidunt maxime aspernatur exercitationem laboriosam odio dolores magnam ratione atque, quasi odit. Hic!</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img src="images/pic-3.png" alt="">
+                <h3>john deo</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur sunt eligendi est, dicta maiores amet nihil perferendis, incidunt maxime aspernatur exercitationem laboriosam odio dolores magnam ratione atque, quasi odit. Hic!</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img src="images/pic-4.png" alt="">
+                <h3>john deo</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur sunt eligendi est, dicta maiores amet nihil perferendis, incidunt maxime aspernatur exercitationem laboriosam odio dolores magnam ratione atque, quasi odit. Hic!</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+       </div>
+  </div>
+</section>
+<!-- review section ends -->
+<!-- footer section starts  -->
+<section class="footer">
+    <div class="box-container">
+ </div>
+</section>
+<!-- footer section ends -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+<script>
+AOS.init({
+    duration:800,
+    delay:400
+});
+</script>
+</body>
+</html>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</application>
+        <file_path/>
+        <instance_id>66176aa9db0ff7803050ac44d4961982</instance_id>
+        <instance_name>dev90563</instance_name>
+        <name>sp_widget_cef5b2ef1bf0e110c3ae7596cc4bcb66</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[let navbar = document.querySelector('.navbar')
+  document.querySelector('#menu-btn').onclick = () =&gt;{
+    navbar.classList.toggle('active');
+    loginForm.classList.remove('active');
+    searchForm.classList.remove('active');
+}
+	let searchForm = document.querySelector('.search-form')
+   document.querySelector('#search-btn').onclick = () =&gt;{
+    searchForm.classList.toggle('active');
+    navbar.classList.remove('active');
+    loginForm.classList.remove('active');
+} 
+	 window.onscroll = () =&gt;{
+    navbar.classList.remove('active');
+    loginForm.classList.remove('active');
+    searchForm.classList.remove('active');
+}
+var swiper = new Swiper(".review-slider", {
+    loop:true,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+        delay: 5500,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+    },
+});]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&amp;amp;display=swap');
+
+:root{
+    --orange:#F79F1F;
+    --text-color-1:#444;
+    --text-color-2:#666;
+    --bg-color-1:#fff;
+    --bg-color-2:#eee;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition:all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width:.8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background:var(--orange);
+    border-radius: 5rem;
+}
+
+body{
+    background:var(--bg-color-2);
+}
+
+body.active{
+    --text-color-1:#fff;
+    --text-color-2:#eee;
+    --bg-color-1:#333;
+    --bg-color-2:#222;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.4);
+}
+
+section{
+    padding:2rem 7%;
+}
+
+.heading{
+    text-align: center;
+    padding-bottom: 2rem;
+    color:var(--text-color-1);
+    font-size: 4rem;
+}
+
+.heading span{
+    position: relative;
+    z-index: 0;
+}
+
+.heading span::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    background: var(--orange);
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(0 90%, 100% 83%, 100% 100%, 0% 100%);
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.8rem 3rem;
+    font-size: 1.7rem;
+    color:#fff;
+    background:#ab6806;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.btn:hover{
+    letter-spacing: .2rem;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right:0;
+    background:var(--bg-color-1);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem 7%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo{
+    font-weight: bolder;
+    font-size: 2.5rem;
+    color:var(--text-color-1);
+}
+
+.header .logo i{
+    color:var(--orange);
+}
+
+.header .search-form{
+    background:var(--bg-color-2);
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    height: 4.5rem;
+    width:50rem;
+}
+
+.header .search-form input{
+    height:100%;
+    width:100%;
+    background:none;
+    text-transform: none;
+    font-size: 1.5rem;
+    color:var(--text-color-1);
+    padding:1rem;
+}
+
+.header .search-form label{
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    color:var(--text-color-1);
+    cursor: pointer;
+}
+
+.header .search-form label:hover{
+    color:var(--orange);
+}
+
+.header .icons div{
+    height:4.5rem;
+    width:4.5rem;
+    line-height:4.5rem;
+    font-size: 2rem;
+    border-radius: .5rem;
+    margin-left: .5rem;
+    background:var(--bg-color-2);
+    color:var(--text-color-1);
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    color:#fff;
+    background:var(--orange);
+}
+
+#search-btn{
+    display:none;
+}
+
+.header .navbar{
+    position:absolute;
+    top:115%; right:7%;
+    background:var(--bg-color-1);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width:25rem;
+    transform:scale(0);
+    transform-origin: top right;
+}
+
+.header .navbar.active{
+    transform:scale(1);
+}
+
+.header .navbar a{
+    display:block;
+    margin:1rem;
+    padding:1rem;
+    font-size: 1.5rem;
+    color:var(--text-color-1);
+    border-radius: .5rem;
+}
+
+.header .navbar a:hover{
+    color:var(--orange);
+    background:var(--bg-color-2);
+    padding-left: 2rem;
+}
+ 
+.home{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    padding-top: 7rem;
+    background: #fff;
+}
+
+.home .image{
+    flex:1 1 45rem;
+}
+
+.home .image img{
+    width: 100%;
+}
+
+.home .content{
+    flex:1 1 45rem;
+}
+
+.home .content h3{
+    color:var(--text-color-1);
+    font-size: 4rem;
+}
+
+.home .content p{
+    color:var(--text-color-2);
+    font-size: 1.7rem;
+    line-height: 1.7;
+    padding:1rem 0;
+}
+
+.form-container form{
+    background: var(--bg-color-1);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    padding:2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap:1rem;
+    align-items: center;
+}
+
+.form-container form .inputBox{
+    flex:1 1 23rem;
+}
+
+.form-container form .inputBox span{
+    font-size: 1.7rem;
+    color:var(--text-color-2);
+}
+
+.form-container form .inputBox input{
+    font-size: 1.5rem;
+    color:var(--text-color-1);
+    background:var(--bg-color-2);
+    border-radius: .5rem;
+    margin:.5rem 0;
+    text-transform: none;
+    width: 100%;
+    padding:1rem;
+}
+
+.form-container form .btn{
+    flex:1 1 23rem;
+}
+
+.packages .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.packages .box-container .box{
+    background:var(--bg-color-1);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.packages .box-container .box .image{
+    height:25rem;
+    width: 100%;
+    padding:1.5rem;
+    position: relative;
+}
+
+.packages .box-container .box .image img{
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+
+.packages .box-container .box .image h3{
+    position: absolute;
+    top:2.5rem; left:2.5rem;
+    font-size: 2rem;
+    color:#fff;
+    background: rgba(0,0,0,.5);
+    border-radius: .5rem;
+    font-weight: lighter;
+    padding:.5rem 1.5rem;
+}
+
+.packages .box-container .box .image h3 i{
+    color:var(--orange);
+}
+
+.packages .box-container .box .content{
+    padding:1.5rem;
+    padding-top: 0;
+}
+
+.packages .box-container .box .content .price{
+    font-weight: 600;
+    color:var(--text-color-1);
+    font-size: 2.5rem;
+}
+
+.packages .box-container .box .content .price span{
+    font-weight: lighter;
+    color:var(--text-color-2);
+    font-size: 1.5rem;
+    text-decoration: line-through;
+}
+
+.packages .box-container .box .content p{
+    font-size: 1.5rem;
+    padding:.5rem 0;
+    color:var(--text-color-2);
+    line-height: 1.7;
+}
+ 
+.pricing .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.pricing .box-container .box{
+    background:var(--bg-color-1);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    padding:2rem;
+    text-align: center;
+}
+
+.pricing .box-container .box h3{
+    padding:1rem;
+    background: var(--bg-color-2);
+    border-radius: .5rem;
+    font-size: 2rem;
+    color:var(--text-color-1);
+}
+
+.pricing .box-container .box .price{
+    padding-top: 2rem;
+}
+
+.pricing .box-container .box .price span{
+    font-size: 2rem;
+    color:var(--text-color-2);
+}
+
+.pricing .box-container .box .price .amount{
+    font-size: 5rem;
+    color:var(--text-color-1);
+    font-weight: bolder;
+}
+
+.pricing .box-container .box ul{
+    padding: .5rem 0;
+    list-style: none;
+}
+
+.pricing .box-container .box ul li{
+    padding: 1rem 0;
+    font-size: 1.7rem;
+    color:var(--text-color-2);
+}
+
+.review .review-slider{
+    box-shadow: var(--box-shadow);
+}
+
+.review .review-slider .slide{
+    background: var(--bg-color-1);
+    border-radius: .5rem;
+    text-align: center;
+    padding: 3rem;
+}
+
+.review .review-slider .slide img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: .5rem;
+}
+
+.review .review-slider .slide h3{
+    font-size: 2.5rem;
+    color:var(--text-color-1);
+}
+
+.review .review-slider .slide p{
+    font-size: 1.6rem;
+    color:var(--text-color-2);
+    line-height: 1.7;
+    padding: 1rem 0;
+}
+
+.review .review-slider .slide .stars{
+    padding: 1rem 0;
+    padding-bottom: 1.5rem;
+}
+
+.review .review-slider .slide .stars i{
+    font-size: 2rem;
+    color:var(--orange);
+}
+
+.swiper-pagination-bullet-active{
+    background: var(--orange);
+}
+
+.contact form{
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact form .inputBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact form textarea,
+.contact form .inputBox input{
+    width: 100%;
+    padding:1rem;
+    font-size: 1.6rem;
+    color:var(--text-color-1);
+    margin:.7rem 0;
+    background: var(--bg-color-1);
+    box-shadow: var(--box-shadow);
+    text-transform: none;
+    border-radius: .5rem;
+}
+
+.contact form textarea{
+    height: 20rem;
+    resize: none;
+}
+
+.contact form .inputBox input{
+    width: 49%;
+}
+
+.blogs .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.blogs .box-container .box{
+    background:var(--bg-color-1);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    padding:2rem;
+}
+
+.blogs .box-container .box .image{
+    height: 20rem;
+    width: 100%;
+    overflow:hidden;
+    border-radius: .5rem;
+    background: var(--bg-color-2);
+}
+
+.blogs .box-container .box .image img{
+    height: 100%;
+    width: 100%;
+}
+
+.blogs .box-container .box:hover .image img{
+    transform:scale(1.2);
+}
+
+.blogs .box-container .box .content{
+    padding-top: 1rem;
+}
+
+.blogs .box-container .box .content h3{
+   font-size: 2rem;
+   color:var(--text-color-1);
+   line-height: 1.5;
+}
+
+.blogs .box-container .box .content .icons{
+    display: flex;
+    justify-content: space-between;
+    border-top: .1rem solid var(--text-color-2);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+}
+
+.blogs .box-container .box .content .icons a{
+    font-size: 1.5rem;
+    color:var(--text-color-2);
+}
+
+.blogs .box-container .box .content .icons a:hover{
+    color:var(--orange);
+}
+
+.blogs .box-container .box .content .icons a i{
+    padding-right: .5rem;
+    color:var(--orange);
+}
+
+.footer{
+    background: var(--bg-color-1);
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap:1.5rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color:var(--text-color-1);
+    padding:1rem 0;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.5rem;
+    color:var(--text-color-2);
+    padding:1rem 0;
+}
+
+.footer .box-container .box a i{
+    padding-right: .5rem;
+    color:var(--orange);
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}
+
+.footer .credit{
+    font-size: 2rem;
+    text-align: center;
+    border-top: .1rem solid var(--text-color-2);
+    padding:1rem;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    color:var(--text-color-2);
+}
+
+.footer .credit span{
+    color:var(--orange);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries  */
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:1.5rem 2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .header .navbar{
+        right: 2rem;
+    }
+
+    .header .login-form{
+        right: 2rem;
+    }
+
+    #search-btn{
+        display:inline-block;
+    }
+
+    .header .search-form{
+        position: absolute;
+        top:115%; right: 2rem;
+        background:var(--bg-color-1);
+        border-radius: .5rem;
+        width: 90%;
+        box-shadow: var(--box-shadow);
+        transform:scale(0);
+        transform-origin: top right;
+    }
+
+    .header .search-form.active{
+        transform:scale(1);
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .contact form .inputBox input{
+        width: 100%;
+    }
+
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;aamfahw&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]&gt;&lt;/link&gt;&lt;name&gt;AAMFA Home Widget&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles&gt;new user,admin&lt;/roles&gt;&lt;script&gt;&lt;![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-02-10 05:08:41&lt;/sys_created_on&gt;&lt;sys_id&gt;cef5b2ef1bf0e110c3ae7596cc4bcb66&lt;/sys_id&gt;&lt;sys_mod_count&gt;24&lt;/sys_mod_count&gt;&lt;sys_name&gt;AAMFA Home Widget&lt;/sys_name&gt;&lt;sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7"&gt;002787761b331110c3ae7596cc4bcba7&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Authentcation Authorisation MFA"&gt;002787761b331110c3ae7596cc4bcba7&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_cef5b2ef1bf0e110c3ae7596cc4bcb66&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-03-13 18:10:47&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  
+
+ 
+    &lt;link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /&gt;
+
+    &lt;!-- font awesome cdn link  --&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"&gt;
+
+    &lt;!-- custom css file cdn link  --&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;!-- header section starts  --&gt;
+&lt;!-- header section ends --&gt;
+
+&lt;!-- home section starts  --&gt;
+
+&lt;section class="home" id="home"&gt;
+
+    &lt;div class="image" data-aos="fade-down"&gt;
+        &lt;img src="https://st4.depositphotos.com/2714851/21414/i/600/depositphotos_214141628-stock-photo-plated-vegetarian-main-meal.jpg" alt=""&gt;
+    &lt;/div&gt;
+
+    &lt;div class="content" data-aos="fade-up"&gt;
+        &lt;h3&gt;Most Tasty Food For You&lt;/h3&gt;
+        &lt;p&gt;Food Zone” restaurant Pinstripes presents itself as a brand that cares about its food and promises a fun, elevated experience. It focuses on the restaurant serving as a venue for great times with friends.!&lt;/p&gt;
+        &lt;a href="#" class="btn"&gt;explore now&lt;/a&gt;
+    &lt;/div&gt;
+
+&lt;/section&gt;
+
+&lt;!-- home section ends --&gt;
+
+&lt;!-- filter form section starts  --&gt;
+
+&lt;section class="form-container" data-aos="zoom-in"&gt;
+
+    &lt;form action=""&gt;
+
+        &lt;div class="inputBox"&gt;
+            &lt;span&gt;where&lt;/span&gt;
+            &lt;input type="text" placeholder="search places"&gt;
+        &lt;/div&gt;
+
+        &lt;div class="inputBox"&gt;
+            &lt;span&gt;When&lt;/span&gt;
+            &lt;input type="date"&gt;
+        &lt;/div&gt;
+
+        &lt;div class="inputBox"&gt;
+            &lt;span&gt;Time&lt;/span&gt;
+            &lt;input type="time"&gt;
+        &lt;/div&gt;
+
+        &lt;input type="submit" value="book now" class="btn"&gt;
+
+    &lt;/form&gt;
+
+&lt;/section&gt;
+
+&lt;!-- filter form section ends --&gt;
+
+&lt;!-- packages section starts  --&gt;
+
+&lt;section class="packages" id="packages"&gt;
+
+    &lt;h1 class="heading"&gt; our &lt;span&gt;Foods&lt;/span&gt; &lt;/h1&gt;
+
+    &lt;div class="box-container"&gt;
+
+        &lt;div class="box" data-aos="fade-up"&gt;
+            &lt;div class="image"&gt;
+                &lt;img src="https://www.oetker.in/Recipe/Recipes/oetker.in/in-en/burgers/image-thumb__131674__RecipeDetailsLightBox/maharaja-burger.jpg" alt=""&gt;
+                &lt;h3&gt; &lt;i class="fas fa-utensils"&gt;&lt;/i&gt; Burger &lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class="content"&gt;
+                &lt;div class="price"&gt; 290.99 &lt;span&gt;350.99&lt;/span&gt; &lt;/div&gt;
+                &lt;p&gt;Juicy, big, loaded with toppings of your choice..&lt;/p&gt;
+                &lt;a href="#" class="btn"&gt; Order now&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="box" data-aos="fade-up"&gt;
+            &lt;div class="image"&gt;
+                &lt;img src="https://www.spar.co.uk/media/zrkfgcyg/shutterstock_168331826.jpg?anchor=center&amp;mode=crop&amp;heightratio=0.625&amp;width=1920&amp;rnd=133039182938670000" alt=""&gt;
+                &lt;h3&gt; &lt;i class="fas fa-utensils"&gt;&lt;/i&gt; Pasta &lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class="content"&gt;
+                &lt;div class="price"&gt; 350.99 &lt;span&gt;499.99&lt;/span&gt; &lt;/div&gt;
+                &lt;p&gt;Penne with a traditional tomato based sauce,finished off spices.&lt;/p&gt;
+                &lt;a href="#" class="btn"&gt; Order now&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="box" data-aos="fade-up"&gt;
+            &lt;div class="image"&gt;
+                &lt;img src="https://realfood.tesco.com/media/images/1400x919-MargaritaPizza-555a4065-2573-4b41-bcf3-7193cd095d8f-0-1400x919.jpg" alt=""&gt;
+                &lt;h3&gt; &lt;i class="fas fa-utensils"&gt;&lt;/i&gt; Pizza &lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class="content"&gt;
+                &lt;div class="price"&gt; 199.99 &lt;span&gt;249.99&lt;/span&gt; &lt;/div&gt;
+                &lt;p&gt; An intensely cheesy flavor. The combination tomato sauce cheese.&lt;/p&gt;
+                &lt;a href="#" class="btn"&gt; Order now&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="box" data-aos="fade-up"&gt;
+            &lt;div class="image"&gt;
+                &lt;img src="https://media.istockphoto.com/id/488481490/photo/fish-biryani-with-basmati-rice-indian-food.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=9xEw3VOQSz9TP8yQr60L47uExyKF9kogRhQdlghlC00=" alt=""&gt;
+                &lt;h3&gt; &lt;i class="fas fa-utensils"&gt;&lt;/i&gt; Biryani &lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class="content"&gt;
+                &lt;div class="price"&gt; 290.99 &lt;span&gt;350.99&lt;/span&gt; &lt;/div&gt;
+                &lt;p&gt; traditionally cooked over an open fire in a leather pot.&lt;/p&gt;
+                &lt;a href="#" class="btn"&gt; Order now&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="box" data-aos="fade-up"&gt;
+            &lt;div class="image"&gt;
+                &lt;img src="https://restaurantclicks.com/wp-content/uploads/2022/05/Most-Popular-Ice-Cream.jpg" alt=""&gt;
+                &lt;h3&gt; &lt;i class="fas fa-utensils"&gt;&lt;/i&gt; Ice-Cream &lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class="content"&gt;
+                &lt;div class="price"&gt; 100.99 &lt;span&gt;149.99&lt;/span&gt; &lt;/div&gt;
+                &lt;p&gt; made from dairy products such as milk and cream using fruits.&lt;/p&gt;
+                &lt;a href="#" class="btn"&gt; Order now&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="box" data-aos="fade-up"&gt;
+            &lt;div class="image"&gt;
+                &lt;img src="https://www.theseasonedmom.com/wp-content/uploads/2018/04/Easiest-Burrito-Recipe-Square-500x375.jpg" alt=""&gt;
+                &lt;h3&gt; &lt;i class="fas fa-utensils"&gt;&lt;/i&gt; burrito &lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class="content"&gt;
+                &lt;div class="price"&gt; 139.99 &lt;span&gt;299.99&lt;/span&gt; &lt;/div&gt;
+                &lt;p&gt;wrapped around a mixed filling of such ingredients as meat, cheese, beans.&lt;/p&gt;
+                &lt;a href="#" class="btn"&gt; Order now&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+&lt;/section&gt;
+
+&lt;!-- packages section ends --&gt;
+ 
+
+&lt;!-- pricing section starts  --&gt;
+
+&lt;section class="pricing" id="pricing"&gt;
+
+    &lt;h1 class="heading"&gt; our &lt;span&gt;pricing&lt;/span&gt; &lt;/h1&gt;
+
+    &lt;div class="box-container"&gt;
+
+        &lt;div class="box" data-aos="zoom-in-up"&gt;
+            &lt;h3&gt; basic plan &lt;/h3&gt;
+            &lt;div class="price"&gt;
+                &lt;span&gt;$&lt;/span&gt;
+                &lt;span class="amount"&gt;30&lt;/span&gt;
+                &lt;span&gt;/mo&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;ul&gt;
+                &lt;li&gt;10 days&lt;/li&gt;
+                &lt;li&gt;food and drinks&lt;/li&gt;
+                &lt;li&gt;safty guide&lt;/li&gt;
+                &lt;li&gt;insurance&lt;/li&gt;
+                &lt;li&gt;luxury hotel&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;a href="#" class="btn"&gt;choose plan&lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class="box" data-aos="zoom-in-up"&gt;
+            &lt;h3&gt; standard plan &lt;/h3&gt;
+            &lt;div class="price"&gt;
+                &lt;span&gt;$&lt;/span&gt;
+                &lt;span class="amount"&gt;50&lt;/span&gt;
+                &lt;span&gt;/mo&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;ul&gt;
+                &lt;li&gt;20 days&lt;/li&gt;
+                &lt;li&gt;food and drinks&lt;/li&gt;
+                &lt;li&gt;safty guide&lt;/li&gt;
+                &lt;li&gt;insurance&lt;/li&gt;
+                &lt;li&gt;luxury hotel&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;a href="#" class="btn"&gt;choose plan&lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class="box" data-aos="zoom-in-up"&gt;
+            &lt;h3&gt; premium plan &lt;/h3&gt;
+            &lt;div class="price"&gt;
+                &lt;span&gt;$&lt;/span&gt;
+                &lt;span class="amount"&gt;90&lt;/span&gt;
+                &lt;span&gt;/mo&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;ul&gt;
+                &lt;li&gt;30 days&lt;/li&gt;
+                &lt;li&gt;food and drinks&lt;/li&gt;
+                &lt;li&gt;safty guide&lt;/li&gt;
+                &lt;li&gt;insurance&lt;/li&gt;
+                &lt;li&gt;luxury hotel&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;a href="#" class="btn"&gt;choose plan&lt;/a&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+&lt;/section&gt;
+
+&lt;!-- pricing section ends --&gt;
+
+&lt;!-- review section starts  --&gt;
+
+&lt;section class="review" id="review"&gt;
+
+    &lt;h1 class="heading"&gt; client's &lt;span&gt;review&lt;/span&gt; &lt;/h1&gt;
+
+    &lt;div class="swiper-container review-slider" data-aos="zoom-in"&gt;
+
+        &lt;div class="swiper-wrapper"&gt;
+
+            &lt;div class="swiper-slide slide"&gt;
+                &lt;img src="images/pic-1.png" alt=""&gt;
+                &lt;h3&gt;john deo&lt;/h3&gt;
+                &lt;p&gt;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur sunt eligendi est, dicta maiores amet nihil perferendis, incidunt maxime aspernatur exercitationem laboriosam odio dolores magnam ratione atque, quasi odit. Hic!&lt;/p&gt;
+                &lt;div class="stars"&gt;
+                    &lt;i class="fas fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-star-half-alt"&gt;&lt;/i&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="swiper-slide slide"&gt;
+                &lt;img src="images/pic-2.png" alt=""&gt;
+                &lt;h3&gt;john deo&lt;/h3&gt;
+                &lt;p&gt;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur sunt eligendi est, dicta maiores amet nihil perferendis, incidunt maxime aspernatur exercitationem laboriosam odio dolores magnam ratione atque, quasi odit. Hic!&lt;/p&gt;
+                &lt;div class="stars"&gt;
+                    &lt;i class="fas fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-star-half-alt"&gt;&lt;/i&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="swiper-slide slide"&gt;
+                &lt;img src="images/pic-3.png" alt=""&gt;
+                &lt;h3&gt;john deo&lt;/h3&gt;
+                &lt;p&gt;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur sunt eligendi est, dicta maiores amet nihil perferendis, incidunt maxime aspernatur exercitationem laboriosam odio dolores magnam ratione atque, quasi odit. Hic!&lt;/p&gt;
+                &lt;div class="stars"&gt;
+                    &lt;i class="fas fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-star-half-alt"&gt;&lt;/i&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="swiper-slide slide"&gt;
+                &lt;img src="images/pic-4.png" alt=""&gt;
+                &lt;h3&gt;john deo&lt;/h3&gt;
+                &lt;p&gt;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur sunt eligendi est, dicta maiores amet nihil perferendis, incidunt maxime aspernatur exercitationem laboriosam odio dolores magnam ratione atque, quasi odit. Hic!&lt;/p&gt;
+                &lt;div class="stars"&gt;
+                    &lt;i class="fas fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-star"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-star-half-alt"&gt;&lt;/i&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+       &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- review section ends --&gt;
+&lt;!-- footer section starts  --&gt;
+&lt;section class="footer"&gt;
+    &lt;div class="box-container"&gt;
+ &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- footer section ends --&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"&gt;&lt;/script&gt;
+&lt;script src="https://unpkg.com/swiper/swiper-bundle.min.js"&gt;&lt;/script&gt;
+&lt;!-- custom js file link  --&gt;
+&lt;script src="js/script.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+AOS.init({
+    duration:800,
+    delay:400
+});
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-12413086</payload_hash>
+        <record_name>AAMFA Home Widget</record_name>
+        <reverted_from/>
+        <source>0db20a8b1b346110c3ae7596cc4bcb25</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-13 18:10:47</sys_created_on>
+        <sys_id>3cd2dd7d1be9e110c3ae7596cc4bcb4e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>186dc2af26f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-13 18:10:47</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>34d2dd7d43e9e1101c254f7adaa2144e</update_guid>
+        <update_guid_history>34d2dd7d43e9e1101c254f7adaa2144e:-12413086,9e62157d2be9e110b8a8a249f8802aa1:-683607409,f6209d398de9e1106396a80d35c4576d:-12413086,07dcb4f53ea9e11060b9488252b8c588:28767836,2da9eb2f78b4e110ce6783a4a0d26448:-2138788957,ead727abf1b4e110378dcb8a037e14b9:-558526549,9c8a53632eb4e11057e7b44bebf070a4:902227014,d6f99b2301b4e110d37dec1937876f26:-910152045,48f8d32f5574e110b30c8be8568f3658:-420444872,d037df6bcb74e110f5133ed68b99baba:1816800975,f576d32ff374e110cd17b3b24b809e60:1263572355,7c7ecfefdd34e110bb9908164ff2d6f0:-879454658,882e43273e74e110f6bde7b41ec7f638:1140103620,a35c03275874e110b63195a5e7586d16:-1704084308,3d0c8be3b274e110757add7afda8d704:1766857842,3aea4b631d74e1103d39500243e0f381:43445639,abf98763b974e1109c7d01bcd5644b21:-1659035866,6ec94b63eb74e1106843026f2ca6b546:1243869490,3d89c7238d74e110adcc324816456245:-23951128,77788faf3634e110a5e788cac9d536fc:212615142,3ef70f6fec34e11091c771e8a56297a0:1278824540,94d0876b8834e110bff963d7dd2d9794:1463877479,1fa0036b9034e1108930755b52758ac3:641891726,c596faef79f0e110acda717c14a77c82:-1374620858,3186b2ef8bf0e110ecf0416c2c407272:1505537337</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="AAMFA Home Widget">6c759d311b2de110c3ae7596cc4bcb91</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-13 18:22:15</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>58fec24e7dcd46bba2a83be364b4fd69</sys_id>
+        <sys_metadata>cef5b2ef1bf0e110c3ae7596cc4bcb66</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AAMFA Home Widget</sys_name>
+        <sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7">002787761b331110c3ae7596cc4bcba7</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope>
+        <sys_scope_delete display_value="">496b547d12ce4600962317fa6d52b491</sys_scope_delete>
+        <sys_update_name>sp_widget_cef5b2ef1bf0e110c3ae7596cc4bcb66</sys_update_name>
+        <sys_update_version display_value="sp_widget_cef5b2ef1bf0e110c3ae7596cc4bcb66">3cd2dd7d1be9e110c3ae7596cc4bcb4e</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-13 18:22:15</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

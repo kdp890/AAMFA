@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[let navbar = document.querySelector('.navbar') 
-document.querySelector('#menu-btn').onclick = () =>{
+        <client_script><![CDATA[
+	let navbar = document.querySelector('.navbar')
+	document.querySelector('#menu-btn').onclick = () =>{
     navbar.classList.toggle('active');
     loginForm.classList.remove('active');
     searchForm.classList.remove('active');
 } 
-let searchForm = document.querySelector('.search-form')
-document.querySelector('#search-btn').onclick = () =>{
+		let searchForm = document.querySelector('.search-form') 
+		document.querySelector('#search-btn').onclick = () =>{
     searchForm.classList.toggle('active');
     navbar.classList.remove('active');
     loginForm.classList.remove('active');
-} 
-window.onscroll = () =>{
+}
+		window.onscroll = () =>{
     navbar.classList.remove('active');
     loginForm.classList.remove('active');
     searchForm.classList.remove('active');
@@ -29,7 +30,8 @@ var swiper = new Swiper(".review-slider", {
     pagination: {
         el: ".swiper-pagination",
     },
-});]]></client_script>
+});
+]]></client_script>
         <controller_as>c</controller_as>
         <css>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&amp;display=swap');
 
@@ -669,41 +671,110 @@ section{
         width: 100%;
     }
 
-}</css>
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
         <docs/>
         <field_list/>
-        <has_preview>true</has_preview>
-        <id>aamfaml</id>
+        <has_preview>false</has_preview>
+        <id>mfa_home_menu_widget</id>
         <internal>false</internal>
-        <link><![CDATA[function link(scope, element, attrs, controller) {
-  
-}]]></link>
-        <name>AAMFA Menu Widget1</name>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>MFA Home Menu Widget</name>
         <option_schema/>
-        <public>true</public>
-        <roles>new user,admin</roles>
-        <script><![CDATA[(function() {
-  /* populate the 'data' object */
-  /* e.g., data.table = $sp.getValue('table'); */
-
-})();]]></script>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2023-02-10 05:10:33</sys_created_on>
-        <sys_id>d4a6feaf1bf0e110c3ae7596cc4bcba9</sys_id>
+        <sys_created_on>2023-03-13 18:35:22</sys_created_on>
+        <sys_id>b07815f11b2de110c3ae7596cc4bcb5f</sys_id>
         <sys_mod_count>2</sys_mod_count>
-        <sys_name>AAMFA Menu Widget1</sys_name>
+        <sys_name>MFA Home Menu Widget</sys_name>
         <sys_package display_value="Authentcation Authorisation MFA" source="002787761b331110c3ae7596cc4bcba7">002787761b331110c3ae7596cc4bcba7</sys_package>
         <sys_policy/>
         <sys_scope display_value="Authentcation Authorisation MFA">002787761b331110c3ae7596cc4bcba7</sys_scope>
-        <sys_update_name>sp_widget_d4a6feaf1bf0e110c3ae7596cc4bcba9</sys_update_name>
+        <sys_update_name>sp_widget_b07815f11b2de110c3ae7596cc4bcb5f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-03-13 16:48:45</sys_updated_on>
-        <template><![CDATA[<section class="packages" id="packages">
+        <sys_updated_on>2023-03-13 18:46:41</sys_updated_on>
+        <template><![CDATA[<div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+ 
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- custom css file cdn link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="image" data-aos="fade-down">
+        <img src="https://st4.depositphotos.com/2714851/21414/i/600/depositphotos_214141628-stock-photo-plated-vegetarian-main-meal.jpg" alt="">
+    </div>
+
+    <div class="content" data-aos="fade-up">
+        <h3>Most Tasty Food For You</h3>
+        <p>Food Zone” restaurant Pinstripes presents itself as a brand that cares about its food and promises a fun, elevated experience. It focuses on the restaurant serving as a venue for great times with friends.!</p>
+        <a href="#" class="btn">explore now</a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- filter form section starts  -->
+
+<section class="form-container" data-aos="zoom-in">
+
+    <form action="">
+
+        <div class="inputBox">
+            <span>where</span>
+            <input type="text" placeholder="search places">
+        </div>
+
+        <div class="inputBox">
+            <span>When</span>
+            <input type="date">
+        </div>
+
+        <div class="inputBox">
+            <span>Time</span>
+            <input type="time">
+        </div>
+
+        <input type="submit" value="book now" class="btn">
+
+    </form>
+
+</section>
+
+<!-- filter form section ends -->
+
+<!-- packages section starts  -->
+
+<section class="packages" id="packages">
 
     <h1 class="heading"> our <span>Foods</span> </h1>
 
@@ -717,7 +788,7 @@ section{
             <div class="content">
                 <div class="price"> 290.99 <span>350.99</span> </div>
                 <p>Juicy, big, loaded with toppings of your choice..</p>
-            
+                <a href="#" class="btn"> Order now</a>
             </div>
         </div>
 
@@ -729,7 +800,7 @@ section{
             <div class="content">
                 <div class="price"> 350.99 <span>499.99</span> </div>
                 <p>Penne with a traditional tomato based sauce,finished off spices.</p>
-                
+                <a href="#" class="btn"> Order now</a>
             </div>
         </div>
 
@@ -741,7 +812,7 @@ section{
             <div class="content">
                 <div class="price"> 199.99 <span>249.99</span> </div>
                 <p> An intensely cheesy flavor. The combination tomato sauce cheese.</p>
-              
+                <a href="#" class="btn"> Order now</a>
             </div>
         </div>
 
@@ -753,7 +824,7 @@ section{
             <div class="content">
                 <div class="price"> 290.99 <span>350.99</span> </div>
                 <p> traditionally cooked over an open fire in a leather pot.</p>
-                
+                <a href="#" class="btn"> Order now</a>
             </div>
         </div>
 
@@ -765,57 +836,194 @@ section{
             <div class="content">
                 <div class="price"> 100.99 <span>149.99</span> </div>
                 <p> made from dairy products such as milk and cream using fruits.</p>
-              
-            </div>
-        </div>
-       <div class="box" data-aos="fade-up">
-            <div class="image">
-                <img src="https://thumbs.dreamstime.com/b/indian-thali-26440162.jpg" alt="">
-                <h3> <i class="fas fa-utensils"></i> Thali </h3>
-            </div>
-            <div class="content">
-                <div class="price"> 290.99 <span>350.99</span> </div>
-                <p>Indian-style meal made up of a selection of various dishes which are served on a platter.</p>
-            
-            </div>
-        </div>
-       <div class="box" data-aos="fade-up">
-            <div class="image">
-                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9tb3xlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
-                <h3> <i class="fas fa-utensils"></i> Momos </h3>
-            </div>
-            <div class="content">
-                <div class="price"> 290.99 <span>350.99</span> </div>
-                <p>Juicy, and original tasate with different stuffings with spicy chatni..</p>
-               
-            </div>
-        </div>
-       <div class="box" data-aos="fade-up">
-            <div class="image">
-                <img src="https://www.shutterstock.com/image-photo/paper-masala-dosa-south-indian-260nw-1008144772.jpg" alt="">
-                <h3> <i class="fas fa-utensils"></i> Dosa </h3>
-            </div>
-            <div class="content">
-                <div class="price"> 290.99 <span>350.99</span> </div>
-                <p>Dosa, Authentic South indain delicacy and original taste.</p>
-                
+                <a href="#" class="btn"> Order now</a>
             </div>
         </div>
 
         <div class="box" data-aos="fade-up">
             <div class="image">
-                <img src="https://www.axisbank.com/images/default-source/progress-with-us_new/idli.jpg" alt="">
-                <h3> <i class="fas fa-utensils"></i> Idli </h3>
+                <img src="https://www.theseasonedmom.com/wp-content/uploads/2018/04/Easiest-Burrito-Recipe-Square-500x375.jpg" alt="">
+                <h3> <i class="fas fa-utensils"></i> burrito </h3>
             </div>
             <div class="content">
                 <div class="price"> 139.99 <span>299.99</span> </div>
-                <p> Idli,Authentic South indain delicacy and original taste.</p>
-                
+                <p>wrapped around a mixed filling of such ingredients as meat, cheese, beans.</p>
+                <a href="#" class="btn"> Order now</a>
             </div>
         </div>
 
     </div>
 
-</section>]]></template>
+</section>
+
+<!-- packages section ends -->
+ 
+
+<!-- pricing section starts  -->
+
+<section class="pricing" id="pricing">
+
+    <h1 class="heading"> our <span>pricing</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box" data-aos="zoom-in-up">
+            <h3> basic plan </h3>
+            <div class="price">
+                <span>$</span>
+                <span class="amount">30</span>
+                <span>/mo</span>
+            </div>
+            <ul>
+                <li>10 days</li>
+                <li>food and drinks</li>
+                <li>safty guide</li>
+                <li>insurance</li>
+                <li>luxury hotel</li>
+            </ul>
+            <a href="#" class="btn">choose plan</a>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up">
+            <h3> standard plan </h3>
+            <div class="price">
+                <span>$</span>
+                <span class="amount">50</span>
+                <span>/mo</span>
+            </div>
+            <ul>
+                <li>20 days</li>
+                <li>food and drinks</li>
+                <li>safty guide</li>
+                <li>insurance</li>
+                <li>luxury hotel</li>
+            </ul>
+            <a href="#" class="btn">choose plan</a>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up">
+            <h3> premium plan </h3>
+            <div class="price">
+                <span>$</span>
+                <span class="amount">90</span>
+                <span>/mo</span>
+            </div>
+            <ul>
+                <li>30 days</li>
+                <li>food and drinks</li>
+                <li>safty guide</li>
+                <li>insurance</li>
+                <li>luxury hotel</li>
+            </ul>
+            <a href="#" class="btn">choose plan</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- pricing section ends -->
+
+<!-- review section starts  -->
+
+<section class="review" id="review">
+
+    <h1 class="heading"> client's <span>review</span> </h1>
+
+    <div class="swiper-container review-slider" data-aos="zoom-in">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide">
+                <img src="images/pic-1.png" alt="">
+                <h3>john deo</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur sunt eligendi est, dicta maiores amet nihil perferendis, incidunt maxime aspernatur exercitationem laboriosam odio dolores magnam ratione atque, quasi odit. Hic!</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img src="images/pic-2.png" alt="">
+                <h3>john deo</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur sunt eligendi est, dicta maiores amet nihil perferendis, incidunt maxime aspernatur exercitationem laboriosam odio dolores magnam ratione atque, quasi odit. Hic!</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img src="images/pic-3.png" alt="">
+                <h3>john deo</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur sunt eligendi est, dicta maiores amet nihil perferendis, incidunt maxime aspernatur exercitationem laboriosam odio dolores magnam ratione atque, quasi odit. Hic!</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img src="images/pic-4.png" alt="">
+                <h3>john deo</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur sunt eligendi est, dicta maiores amet nihil perferendis, incidunt maxime aspernatur exercitationem laboriosam odio dolores magnam ratione atque, quasi odit. Hic!</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+        </div>      
+
+    </div>
+
+</section>
+
+<!-- review section ends -->
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+    </div>
+
+</section>
+
+<!-- footer section ends -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+<script>
+
+AOS.init({
+    duration:800,
+    delay:400
+});
+
+</script>
+
+</body>
+</html>
+</div>]]></template>
     </sp_widget>
 </record_update>
